@@ -1,3 +1,12 @@
+/* CUSTOM */
+
+.eb_logo {
+    font-weight: bold;
+    color: #0588C8;
+}
+
+/* ORIGINAL */
+
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
