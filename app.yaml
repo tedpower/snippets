@@ -17,6 +17,7 @@ handlers:
   login: admin
 
 - url: .*
+  secure: always
   script: snippets.application
 
 skip_files:
