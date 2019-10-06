@@ -28,29 +28,30 @@
 </div>
 
 <!-- We have no need for private setting or markdown setting -->
-<!--
-<fieldset class="user-settings-block">
-  <legend class="user-settings-label">
-    Interpret snippets as <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a> by default?
-  </legend>
-  <input id="markdown-yes" type="radio" name="markdown" value="yes"
-         {% if user.uses_markdown %}checked{% endif %}>
-         <label for="markdown-yes">yes</label>
-  <input id="markdown-no" type="radio" name="markdown" value="no"
-         {% if not user.uses_markdown %}checked{% endif %}>
-         <label for="markdown-no">no</label>
-</fieldset>
 
-<fieldset class="user-settings-block">
-  <legend class="user-settings-label">Have snippets be private by default?:</legend>
-  <input id="private-yes" type="radio" name="private" value="yes"
-         {% if user.private_snippets %}checked{% endif %}>
-         <label for="private-yes">yes</label>
-  <input id="private-no" type="radio" name="private" value="no"
-         {% if not user.private_snippets %}checked{% endif %}>
-         <label for="private-no">no</label>
-</fieldset>
--->
+<div style="display: none">
+  <fieldset class="user-settings-block">
+    <legend class="user-settings-label">
+      Interpret snippets as <a href="http://daringfireball.net/projects/markdown/syntax">markdown</a> by default?
+    </legend>
+    <input id="markdown-yes" type="radio" name="markdown" value="yes"
+          {% if user.uses_markdown %}checked{% endif %}>
+          <label for="markdown-yes">yes</label>
+    <input id="markdown-no" type="radio" name="markdown" value="no"
+          {% if not user.uses_markdown %}checked{% endif %}>
+          <label for="markdown-no">no</label>
+  </fieldset>
+
+  <fieldset class="user-settings-block">
+    <legend class="user-settings-label">Have snippets be private by default?:</legend>
+    <input id="private-yes" type="radio" name="private" value="yes"
+          {% if user.private_snippets %}checked{% endif %}>
+          <label for="private-yes">yes</label>
+    <input id="private-no" type="radio" name="private" value="no"
+          {% if not user.private_snippets %}checked{% endif %}>
+          <label for="private-no">no</label>
+  </fieldset>
+</div>
 
 <fieldset class="user-settings-block">
   <legend class="user-settings-label">Receive reminder emails?:</legend>
