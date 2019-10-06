@@ -328,12 +328,24 @@ h1 {
 .snippet-section {
     position: relative;
 }
+
+.snippet-edit-container {
+    display: none;
+}
+
+.snippet-preview-container {
+    border: 1px solid transparent;
+}
+
+.snippet-preview-container:hover {
+    border: 1px solid #0588C8;
+}
+
 .snippet-section,
 .snippet-preview-container {
     margin-top: 10px;
 }
 .snippet-section h3,
-.snippet-preview-container h3,
 .snippet-tag {
     display: inline-block;
     line-height: 23px;

@@ -8,66 +8,68 @@
   {% if editable %}
     <form action="/update_snippet" method="get" class="user-snippet-form">
 
-    <div class="snippet-header clear-fix">
-      <h2>
-        <span class="snippets-title">Snippets for the week starting</span>
-        {{snippet.week|readable_date}}
-        {% if not snippet.text and snippet.week == one_week_ago %}
-        <span class="snippet-alert">Due today!</span>
-        {% endif %}
-        {% if not snippet.text and snippet.week <= eight_days_ago %}
-        <span class="snippet-alert">OVERDUE!</span>
-        {% endif %}
-      </h2>
-      <div class="snippet-actions">
-        <input type="submit" value="Save" class="button save-button" disabled>
-        <button class="button undo-button" disabled>
-          <span class="mobile-visible" aria-label="Clear Changes">&times;</span>
-          <span class="mobile-hidden">Clear Changes</span>
-        </button>
+      <div class="snippet-header clear-fix">
+        <h2>
+          <span class="snippets-title">Snippets for the week starting</span>
+          {{snippet.week|readable_date}}
+          {% if not snippet.text and snippet.week == one_week_ago %}
+          <span class="snippet-alert">Due today!</span>
+          {% endif %}
+          {% if not snippet.text and snippet.week <= eight_days_ago %}
+          <span class="snippet-alert">OVERDUE!</span>
+          {% endif %}
+        </h2>
+        <div class="snippet-actions">
+          <input type="submit" value="Save" class="button save-button" disabled>
+          <button class="button undo-button" disabled>
+            <span class="mobile-visible" aria-label="Clear Changes">&times;</span>
+            <span class="mobile-hidden">Clear Changes</span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <input type="hidden" name="week" value="{{snippet.week|iso_date}}">
-    <input type="hidden" name="u" value="{{username}}">
-    {% if user.category == null_category %}
-    <div class="snippet-warning">
-      <span>
-        <strong>WARNING:</strong> Snippet will go in the "{{null_category}}" category.
-      </span>
-      <a href="/settings?msg=Set+'Category'+below,+then+click+'Save.'&redirect_to=snippet_entry"
-         >Set your snippet category!</a>
-    </div>
-    {% endif %}
-
-    <!-- We have no need for private setting or markdown setting -->
-
-    <div style="display: none">
-      <div class="snippet-setting">
-        <label>
-          <input type="checkbox" name="private" value="True"
-                {% if snippet.private %}checked{% endif %}>
-            Make snippet private (only viewable by people in the domain <i>{{domain}}</i>)
-        </label>
+      <input type="hidden" name="week" value="{{snippet.week|iso_date}}">
+      <input type="hidden" name="u" value="{{username}}">
+      {% if user.category == null_category %}
+      <div class="snippet-warning">
+        <span>
+          <strong>WARNING:</strong> Snippet will go in the "{{null_category}}" category.
+        </span>
+        <a href="/settings?msg=Set+'Category'+below,+then+click+'Save.'&redirect_to=snippet_entry"
+          >Set your snippet category!</a>
       </div>
-      <div class="snippet-setting">
-        <label>
-          <input type="checkbox" name="is_markdown" value="True"
-                {% if snippet.is_markdown %}checked{% endif %}>
-            Snippet is written in <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>
-        </label>
-      </div>
-    </div>
+      {% endif %}
 
-    <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
-    <div class="snippet-preview-container">
-      <h3>Snippet preview:</h3>
-      <span class="snippet-tag snippet-tag-private"
-          {% if not snippet.private %}style="display: none"{% endif %}>Private</span>
-      <span class="snippet-tag snippet-tag-none"
-          {% if snippet.text %}style="display: none"{% endif %}>No snippet</span>
-      <div class="snippet-preview snippet-text{% if snippet.is_markdown %}-markdown{% endif %}"></div>
-    </div>
+      <!-- We have no need for private setting or markdown setting -->
+
+      <div style="display: none">
+        <div class="snippet-setting">
+          <label>
+            <input type="checkbox" name="private" value="True"
+                  {% if snippet.private %}checked{% endif %}>
+              Make snippet private (only viewable by people in the domain <i>{{domain}}</i>)
+          </label>
+        </div>
+        <div class="snippet-setting">
+          <label>
+            <input type="checkbox" name="is_markdown" value="True"
+                  {% if snippet.is_markdown %}checked{% endif %}>
+              Snippet is written in <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>
+          </label>
+        </div>
+      </div>
+
+      <div class="snippet-edit-container">
+        <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
+      </div>
+
+      <div class="snippet-preview-container">
+        <span class="snippet-tag snippet-tag-private"
+            {% if not snippet.private %}style="display: none"{% endif %}>Private</span>
+        <span class="snippet-tag snippet-tag-none"
+            {% if snippet.text %}style="display: none"{% endif %}>No snippet</span>
+        <div class="snippet-preview snippet-text{% if snippet.is_markdown %}-markdown{% endif %}"></div>
+      </div>
     </form>
   {% else %}
     <h2>
