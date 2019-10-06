@@ -24,17 +24,25 @@
 
 <div class="sub-header">
   <div class="centered-content">
-    <form action="/weekly" method="get">
-      <label for="sub-header-week">See snippets for the week starting</label>
-      <input id="sub-header-week" type="text" name="week" value="{{view_week|iso_date}}" />
-      <input class="button" type="submit" value="View">
-    </form>
 
-    <form action="/" method="get">
-      <label for="sub-header-username">See snippets for </label>
-      <input id="sub-header-username" type="text" name="u" value="{{username}}" />
-      <input class="button" type="submit" value="View">
-    </form>
+    <a href="/">Personal</a>
+    <a href="/weekly">Team</a>
+
+    <!-- Hiding weird nav -->
+    <div style="display: none">
+      <form action="/weekly" method="get">
+        <label for="sub-header-week">See snippets for the week starting</label>
+        <input id="sub-header-week" type="text" name="week" value="{{view_week|iso_date}}" />
+        <input class="button" type="submit" value="View">
+      </form>
+
+      <form action="/" method="get">
+        <label for="sub-header-username">See snippets for </label>
+        <input id="sub-header-username" type="text" name="u" value="{{username}}" />
+        <input class="button" type="submit" value="View">
+      </form>
+    </div>
+
   </div>
 </div>
 

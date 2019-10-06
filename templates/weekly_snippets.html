@@ -18,11 +18,11 @@
       <div class="snippet-section unique-snippet">
         <img class="snippet-avatar" src="http://www.gravatar.com/avatar/{{snippet.email_md5_hash}}?s=50&d=retro">
         {% if user.display_name %}
-          <h3>{{user.display_name}} ({{user.email}}):</h3>
+          <h3><a href="/?u={{user.email}}">{{user.display_name}}</a> ({{user.email}}):</h3>
         {% elif snippet.display_name %}
-          <h3>{{snippet.display_name}} ({{user.email}}):</h3>
+          <h3><a href="/?u={{user.email}}">{{snippet.display_name}}</a> ({{user.email}}):</h3>
         {% else %}
-          <h3>{{user.email}}:</h3>
+          <h3><a href="/?u={{user.email}}">{{user.email}}</a>:</h3>
         {% endif %}
         {% if snippet.private %}<span class="snippet-tag snippet-tag-private">Private</span>{% endif %}
         {% if not snippet.text %}<span class="snippet-tag snippet-tag-none">No snippet</span>{% endif %}
