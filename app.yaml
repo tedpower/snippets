@@ -1,7 +1,6 @@
 runtime: python27
 threadsafe: yes
 api_version: 1
-default_expiration: "365d"
 
 handlers:
 - url: /static
