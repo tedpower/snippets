@@ -39,6 +39,9 @@
          >Set your snippet category!</a>
     </div>
     {% endif %}
+
+    <!-- We have no need for private setting or markdown setting -->
+    <!--
     <div class="snippet-setting">
       <label>
         <input type="checkbox" name="private" value="True"
@@ -53,6 +56,8 @@
           Snippet is written in <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>
       </label>
     </div>
+    -->
+
     <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
     <div class="snippet-preview-container">
       <h3>Snippet preview:</h3>
