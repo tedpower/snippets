@@ -19,13 +19,6 @@
           <span class="snippet-alert">OVERDUE!</span>
           {% endif %}
         </h2>
-        <div class="snippet-actions">
-          <input type="submit" value="Save" class="button save-button" disabled>
-          <button class="button undo-button" disabled>
-            <span class="mobile-visible" aria-label="Clear Changes">&times;</span>
-            <span class="mobile-hidden">Clear Changes</span>
-          </button>
-        </div>
       </div>
 
       <input type="hidden" name="week" value="{{snippet.week|iso_date}}">
@@ -61,9 +54,17 @@
 
       <div class="snippet-edit-container">
         <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
+        <div class="snippet-actions">
+          <input type="submit" value="Save" class="button save-button" disabled>
+          <button class="button undo-button" disabled>
+            <span class="mobile-visible" aria-label="Clear Changes">&times;</span>
+            <span class="mobile-hidden">Clear Changes</span>
+          </button>
+        </div>
       </div>
 
       <div class="snippet-preview-container">
+        <h3>Snippet preview:</h3>
         <span class="snippet-tag snippet-tag-private"
             {% if not snippet.private %}style="display: none"{% endif %}>Private</span>
         <span class="snippet-tag snippet-tag-none"
@@ -89,7 +90,7 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-<script src="/static/snippets.js?v4"></script>
+<script src="/static/snippets.js?v5"></script>
 
 <script>
       // Converts snippets to markdown for other users (that is,
