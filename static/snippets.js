@@ -34,7 +34,9 @@ $(function() {
             secret: null,
         };
 
-        this.$textarea.keypress(function(event){
+        var box = this.$textarea;
+
+        box.keypress(function(event){
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13'){
 
