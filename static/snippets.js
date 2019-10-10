@@ -34,6 +34,38 @@ $(function() {
             secret: null,
         };
 
+        this.$textarea.keypress(function(event){
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+
+              value = box.val();
+              // to get the position of the cursor
+              index = box.getCursorPosition();
+              // select all from the starting point to the cursor position
+              str_start = value.substring(0, index);
+              // get end
+              str_end = value.substring(index, value.length);
+              // split the str with a line break
+              splt = str_start.split('\n');
+              // then finally to get your last line
+              lastLine = splt[splt.length - 1].trim();
+              // check first 2 characters
+              lineStart = lastLine.substring(0,2);
+
+              switch (lineStart) {
+                case "* ":
+                  event.preventDefault();
+                  box.val(str_start + "\n* " + str_end);
+                            box.selectRange(index + 3);
+                  break;
+                case "- ":
+                  alert("dash");
+                  break;
+              }
+
+            }
+        });
+
         // Attach event listeners.
         // Internal state should be kept up-to-date with our inputs.
         this.$textarea.on("keyup change", (function() {
@@ -133,4 +165,43 @@ $(function() {
             return msg;
         }
     });
+
+
+    $.fn.getCursorPosition = function() {
+        var el = $(this).get(0);
+        var pos = 0;
+        if('selectionStart' in el) {
+            pos = el.selectionStart;
+        } else if('selection' in document) {
+            el.focus();
+            var Sel = document.selection.createRange();
+            var SelLength = document.selection.createRange().text.length;
+            Sel.moveStart('character', -el.value.length);
+            pos = Sel.text.length - SelLength;
+        }
+        return pos;
+    }
+
+    $.fn.selectRange = function (start, end) {
+        if (typeof end === 'undefined') {
+            end = start;
+        }
+        return this.each(function () {
+            if ('selectionStart' in this) {
+                this.selectionStart = start;
+                this.selectionEnd = end;
+            } else if (this.setSelectionRange) {
+                this.setSelectionRange(start, end);
+            } else if (this.createTextRange) {
+                var range = this.createTextRange();
+                range.collapse(true);
+                range.moveEnd('character', end);
+                range.moveStart('character', start);
+                range.select();
+            }
+        });
+    };
+
+
+
 });
