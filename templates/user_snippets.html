@@ -3,6 +3,8 @@
 
 <h1>Snippets for {{username}}</h1>
 
+<button class="foo-button mdc-button">Button</button>
+
 {% for snippet in snippets %}
   <div class="snippet unique-snippet">
   {% if editable %}
@@ -99,6 +101,8 @@
       $(".snippet-text-markdown").each(function(i, v) {
          v.innerHTML = window.marked(v.innerHTML);
       });
+
+      mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 </script>
 
 
