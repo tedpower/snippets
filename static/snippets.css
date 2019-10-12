@@ -265,6 +265,7 @@ h1 {
     font-size: inherit;
     margin-top: 10px;
     padding: 10px 10px;
+    width: 100%;
 }
 .snippet-text,
 .snippet-text-markdown {
@@ -345,6 +346,7 @@ h1 {
     max-width: 100%;
     border: 10px solid white;
     overflow-wrap: break-word;
+    cursor: text;
 }
 .snippet-preview-container:hover {
     outline: 1px solid #999;
