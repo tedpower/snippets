@@ -334,12 +334,20 @@ h1 {
     margin-top: 10px;
 }
 .snippet-section h3,
-.snippet-preview-container h3,
 .snippet-tag {
     display: inline-block;
     line-height: 23px;
     margin: 0;
     vertical-align: middle;
+}
+.snippet-preview-container {
+    outline: 1px solid #ccc;
+    max-width: 100%;
+    border: 10px solid white;
+    overflow-wrap: break-word;
+}
+.snippet-preview-container:hover {
+    outline: 1px solid #999;
 }
 .snippet-tag {
     background-color: #ddd;
