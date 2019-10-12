@@ -361,6 +361,33 @@ h1 {
     width: 25px;
 }
 
+/* Name */
+.snippet-name {
+    position: relative;
+    display: inline-block;
+}
+
+.snippet-name .tooltiptext {
+    visibility: hidden;
+    min-width: 100px;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.snippet-name:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* User settings */
 .user-settings-label {
     display: inline-block;
