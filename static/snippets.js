@@ -17,6 +17,7 @@ $(function() {
         this.$secretInput = $parentForm.find("input[name=private]");
         this.$secretTag = $parentForm.find(".snippet-tag-private");
         this.$textarea = $parentForm.find("textarea");
+        this.$textareaContainer = $parentForm.find("snippet-edit-container");
         this.$undoButton = $parentForm.find(".undo-button");
 
         // Child element collections.
@@ -34,8 +35,9 @@ $(function() {
             secret: null,
         };
 
-        this.$previewText.click(function() {
-            console.log("clicked me");
+        this.$preview.click(function() {
+            this.$textareaContainer.show();
+            this.$preview.hide();
         });
 
         var box = this.$textarea;
@@ -152,6 +154,8 @@ $(function() {
         e && e.preventDefault && e.preventDefault();
         $.post(this.$el.attr("action"), this.$el.serialize(),
             this.save.bind(this));
+        this.$textareaContainer.hide();
+        this.$preview.show();
     };
 
     // Create a Snippet for each week shown.

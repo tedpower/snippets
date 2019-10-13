@@ -52,7 +52,10 @@
         </div>
       </div>
 
-      <div class="snippet-edit-container">
+      <!-- End hidden section -->
+
+      <div class="snippet-edit-container"
+        {% if snippet.text %}style="display: none"{% endif %}>
         <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
         <div class=" clear-fix">
           <div class="snippet-actions">
@@ -65,7 +68,8 @@
         </div>
       </div>
 
-      <div class="snippet-preview-container">
+      <div class="snippet-preview-container"
+        {% if not snippet.text %}style="display: none"{% endif %}>
         <span class="snippet-tag snippet-tag-private"
             {% if not snippet.private %}style="display: none"{% endif %}>Private</span>
         <span class="snippet-tag snippet-tag-none"
