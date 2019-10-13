@@ -20,6 +20,11 @@ $(function() {
         this.$textarea =          $parentForm.find("textarea");
         this.$undoButton =        $parentForm.find(".undo-button");
 
+        // Creating variables for access within functions
+        var preview = this.$preview;
+        var textareaContainer = this.$textareaContainer;
+        var textarea = this.$textarea;
+
         // Child element collections.
         this.$buttons = this.$saveButton.add(this.$undoButton);
         this.$inputs =
@@ -35,22 +40,18 @@ $(function() {
             secret: null,
         };
 
-        var prevCont = this.$preview;
-        var editCont = this.$textareaContainer;
         this.$preview.click(function() {
-            editCont.show();
-            prevCont.hide();
+            textareaContainer.show();
+            preview.hide();
         });
 
-        var box = this.$textarea;
-
-        box.keypress(function(event) {
+        this.$textarea.keypress(function(event) {
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13'){
 
-              value = box.val();
+              value = textarea.val();
               // to get the position of the cursor
-              index = box.getCursorPosition();
+              index = textarea.getCursorPosition();
               // select all from the starting point to the cursor position
               str_start = value.substring(0, index);
               // get end
@@ -65,8 +66,8 @@ $(function() {
               switch (lineStart) {
                 case "* ":
                   event.preventDefault();
-                  box.val(str_start + "\n* " + str_end);
-                            box.selectRange(index + 3);
+                  textarea.val(str_start + "\n* " + str_end);
+                  textarea.selectRange(index + 3);
                   break;
                 case "- ":
                   alert("dash");
@@ -156,8 +157,8 @@ $(function() {
         e && e.preventDefault && e.preventDefault();
         $.post(this.$el.attr("action"), this.$el.serialize(),
             this.save.bind(this));
-        this.$textareaContainer.hide();
-        this.$preview.show();
+            textareaContainer.hide();
+            preview.show();
     };
 
     // Create a Snippet for each week shown.
