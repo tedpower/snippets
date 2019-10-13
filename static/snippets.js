@@ -1,5 +1,4 @@
 // Handlers for the user_snippets.html template.
-//
 $(function() {
     // A User Snippet class constructor to be called on each
     // `.user-snippet-form`. Handles a bunch of side-effects and adds event
@@ -115,8 +114,8 @@ $(function() {
         this.render();
 
         console.log("save");
-        textareaContainer.hide();
-        preview.show();
+        this.$textareaContainer.hide();
+        this.$preview.show();
     };
 
     // Recover the original values from `this.oldState`.
@@ -130,8 +129,8 @@ $(function() {
         this.$inputs.trigger("change");
 
         console.log("undo");
-        textareaContainer.hide();
-        preview.show();
+        this.$textareaContainer.hide();
+        this.$preview.show();
     };
 
     // Check if a snippet is "dirty", meaning its initial state no-longer
@@ -163,9 +162,11 @@ $(function() {
     // Catch form submissions, submit and disable buttons.
     Snippet.prototype.submit = function(e) {
         e && e.preventDefault && e.preventDefault();
-        textareaContainer.hide();
-        preview.show();
+
         console.log('submit');
+        this.$textareaContainer.hide();
+        this.$preview.show();
+
         $.post(this.$el.attr("action"), this.$el.serialize(),
             this.save.bind(this));
     };
