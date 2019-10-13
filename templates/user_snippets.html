@@ -59,10 +59,7 @@
         <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
         <div class="clear-fix">
           <div class="snippet-actions">
-            <button class="button undo-button">
-              <span class="mobile-visible" aria-label="Clear Changes">&times;</span>
-              <span class="mobile-hidden">Cancel</span>
-            </button>
+            <button class="button undo-button">Cancel</button>
             <input type="submit" value="Save" class="button save-button">
           </div>
         </div>
@@ -78,10 +75,12 @@
       </div>
     </form>
   {% else %}
-    <h2>
-      <span class="snippets-title">Snippets for the week starting</span>
-      {{snippet.week|readable_date}}
-    </h2>
+    <div class="snippet-header clear-fix">
+      <h2>
+        <span class="snippets-title">Week of</span>
+        {{snippet.week|readable_date}}
+      </h2>
+    </div>
     {% if snippet.text %}
       {% if snippet.is_markdown %}
       <div class="snippet-text-markdown">{{(snippet.text or '')|safe}}</div>
