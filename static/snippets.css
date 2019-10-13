@@ -346,14 +346,15 @@ h1 {
     vertical-align: middle;
 }
 .snippet-preview-container {
-    outline: 1px solid #ccc;
+    border: 1px solid #ccc;
     max-width: 100%;
-    border: 10px solid white;
+    padding: 16px;
     overflow-wrap: break-word;
     cursor: text;
+    border-radius: 4px;
 }
 .snippet-preview-container:hover {
-    outline: 1px solid #999;
+    border: 1px solid #999;
 }
 .snippet-tag {
     background-color: #ddd;
