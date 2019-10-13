@@ -42,6 +42,7 @@ $(function() {
         this.$preview.click(function() {
             textareaContainer.show();
             preview.hide();
+            textarea.focus();
         });
 
         this.$textarea.keypress(function(event) {

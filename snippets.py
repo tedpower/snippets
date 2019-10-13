@@ -37,7 +37,7 @@ jinja2.default_config['template_path'] = os.path.join(
 )
 jinja2.default_config['filters'] = {
     'readable_date': (
-        lambda value: value.strftime('%B %d, %Y').replace(' 0', ' ')),
+        lambda value: value.strftime('%b %d, %Y').replace(' 0', ' ')),
     'iso_date': (
         lambda value: value.strftime('%m-%d-%Y')),
 }
