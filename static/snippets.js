@@ -113,6 +113,10 @@ $(function() {
 
         // Disable the buttons.
         this.render();
+
+        console.log("save");
+        textareaContainer.hide();
+        preview.show();
     };
 
     // Recover the original values from `this.oldState`.
@@ -124,6 +128,10 @@ $(function() {
 
         // HACK: Reset internal state and disable the buttons.
         this.$inputs.trigger("change");
+
+        console.log("undo");
+        textareaContainer.hide();
+        preview.show();
     };
 
     // Check if a snippet is "dirty", meaning its initial state no-longer
@@ -155,10 +163,11 @@ $(function() {
     // Catch form submissions, submit and disable buttons.
     Snippet.prototype.submit = function(e) {
         e && e.preventDefault && e.preventDefault();
+        textareaContainer.hide();
+        preview.show();
+        console.log('submit');
         $.post(this.$el.attr("action"), this.$el.serialize(),
             this.save.bind(this));
-            textareaContainer.hide();
-            preview.show();
     };
 
     // Create a Snippet for each week shown.
