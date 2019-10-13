@@ -142,7 +142,7 @@ $(function() {
         var isDirty = this.checkIfDirty();
 
         this.$el.toggleClass("dirty", isDirty);
-        this.$buttons.prop("disabled", !isDirty);
+        // this.$buttons.prop("disabled", !isDirty);
         this.$noneTag.toggle(!this.state.content);
         this.$previewText.html(this.state.markdown ?
             window.marked(this.state.content) : this.state.content);
