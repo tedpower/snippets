@@ -9,16 +9,16 @@ $(function() {
 
         // Child elements of the parent form.
         // We use "secret" instead of "private" because "private" is reserved.
-        this.$markdownInput = $parentForm.find("input[name=is_markdown]");
-        this.$noneTag = $parentForm.find(".snippet-tag-none");
-        this.$preview = $parentForm.find(".snippet-preview-container");
-        this.$previewText = $parentForm.find(".snippet-preview");
-        this.$saveButton = $parentForm.find(".save-button");
-        this.$secretInput = $parentForm.find("input[name=private]");
-        this.$secretTag = $parentForm.find(".snippet-tag-private");
-        this.$textarea = $parentForm.find("textarea");
+        this.$markdownInput =     $parentForm.find("input[name=is_markdown]");
+        this.$noneTag =           $parentForm.find(".snippet-tag-none");
+        this.$preview =           $parentForm.find(".snippet-preview-container");
         this.$textareaContainer = $parentForm.find(".snippet-edit-container");
-        this.$undoButton = $parentForm.find(".undo-button");
+        this.$previewText =       $parentForm.find(".snippet-preview");
+        this.$saveButton =        $parentForm.find(".save-button");
+        this.$secretInput =       $parentForm.find("input[name=private]");
+        this.$secretTag =         $parentForm.find(".snippet-tag-private");
+        this.$textarea =          $parentForm.find("textarea");
+        this.$undoButton =        $parentForm.find(".undo-button");
 
         // Child element collections.
         this.$buttons = this.$saveButton.add(this.$undoButton);
