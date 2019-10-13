@@ -112,10 +112,6 @@ $(function() {
 
         // Disable the buttons.
         this.render();
-
-        console.log("save");
-        this.$textareaContainer.hide();
-        this.$preview.show();
     };
 
     // Recover the original values from `this.oldState`.
