@@ -273,10 +273,6 @@ h1 {
     border-radius: 4px;
     caret-color: rgba(98,0,238);
 }
-.snippet-textarea:focus {
-    border: 2px solid rgba(98,0,238);
-    outline: none;
-}
 .snippet-text,
 .snippet-text-markdown {
     font-size: 14px;
