@@ -17,7 +17,7 @@ $(function() {
         this.$secretInput = $parentForm.find("input[name=private]");
         this.$secretTag = $parentForm.find(".snippet-tag-private");
         this.$textarea = $parentForm.find("textarea");
-        this.$textareaContainer = $parentForm.find("snippet-edit-container");
+        this.$textareaContainer = $parentForm.find(".snippet-edit-container");
         this.$undoButton = $parentForm.find(".undo-button");
 
         // Child element collections.
