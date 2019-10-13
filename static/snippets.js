@@ -35,9 +35,11 @@ $(function() {
             secret: null,
         };
 
+        var prevCont = this.$preview;
+        var editCont = this.$textareaContainer;
         this.$preview.click(function() {
-            this.$textareaContainer.show();
-            this.$preview.hide();
+            editCont.show();
+            prevCont.hide();
         });
 
         var box = this.$textarea;
