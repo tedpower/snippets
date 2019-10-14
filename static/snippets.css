@@ -222,6 +222,11 @@ h1 {
     display: inline-block;
     margin: 0;
 }
+.how-to {
+    float: left;
+    color: rgba(0,0,0,.6);
+    font-size: 12px;
+}
 .snippet-actions {
     padding-top: 10px;
     float: right;
