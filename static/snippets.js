@@ -154,10 +154,6 @@ $(function() {
         this.$previewText.toggleClass("snippet-text-markdown",
             this.state.markdown);
         this.$previewText.toggleClass("snippet-text", !this.state.markdown);
-
-        // resize the textarea to the content
-        this.$textarea.style.height = "1px";
-        this.$textarea.style.height = (25+o.scrollHeight)+"px";
     };
 
     // Catch form submissions, submit and disable buttons.
