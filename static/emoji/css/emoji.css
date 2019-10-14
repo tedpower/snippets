@@ -89,7 +89,7 @@ img.emoji {
 }
 
 .emoji-wysiwyg-editor {
-    padding: 6px;
+    padding: 16px;
     padding-right: 35px;
     margin-bottom: 0px;
     min-height: 35px; /* 35 */

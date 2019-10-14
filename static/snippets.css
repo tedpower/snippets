@@ -223,7 +223,7 @@ h1 {
     margin: 0;
 }
 .snippet-actions {
-    padding-top: 8px;
+    padding-top: 10px;
     float: right;
 }
 .save-button:not(:disabled) {
@@ -263,6 +263,9 @@ h1 {
 }
 .snippet-setting a {
     color: #666;
+}
+.snippet-edit-container {
+    position: relative;
 }
 .snippet-textarea {
     box-sizing: border-box;
