@@ -226,6 +226,7 @@ h1 {
     float: left;
     color: rgba(0,0,0,.6);
     font-size: 12px;
+    padding-left: 16px;
 }
 .snippet-actions {
     padding-top: 10px;
