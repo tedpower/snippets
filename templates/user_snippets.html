@@ -15,11 +15,9 @@
           {% if not snippet.text and snippet.week == one_week_ago %}
           <span class="snippet-alert">DUE TODAY!</span>
           {% endif %}
-          <!--
-          {% if not snippet.text and snippet.week <= eight_days_ago %}
+          {% if not snippet.text and snippet.week <= eight_days_ago and snippet.week > two_weeks_ago %}
           <span class="snippet-alert">OVERDUE!</span>
           {% endif %}
-          -->
         </h2>
       </div>
 
