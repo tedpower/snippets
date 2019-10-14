@@ -42,7 +42,6 @@ $(function() {
         this.$preview.click(function() {
             var previewHeight = preview.height();
             textarea.height(previewHeight);
-            console.log(previewHeight);
             textareaContainer.show();
             preview.hide();
             textarea.focus();
@@ -128,7 +127,6 @@ $(function() {
         // HACK: Reset internal state and disable the buttons.
         this.$inputs.trigger("change");
 
-        console.log("undo");
         this.$textareaContainer.hide();
         this.$preview.show();
     };
@@ -163,7 +161,6 @@ $(function() {
     Snippet.prototype.submit = function(e) {
         e && e.preventDefault && e.preventDefault();
 
-        console.log('submit');
         this.$textareaContainer.hide();
         this.$preview.show();
 
