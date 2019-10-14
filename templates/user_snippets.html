@@ -59,7 +59,7 @@
       <div class="snippet-edit-container"
         {% if snippet.text %}style="display: none"{% endif %}>
         <textarea class="snippet-textarea" name="snippet"
-          rows="6" cols="80" data-emojiable="true"
+          rows="6" cols="80" data-emojiable="true" data-emoji-input="unicode"
           placeholder="Last Week / This Week / Shoutouts...">{{snippet.text or ''}}</textarea>
         <div class="clear-fix">
           <!-- Format with Markdown, list -->
