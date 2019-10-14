@@ -47,6 +47,13 @@ $(function() {
             textarea.focus();
         });
 
+        this.$textarea.focus(function() {
+            if(textarea.val() == '') {
+                var starterString = "This past week\n* \n* \n\nNext Week...";
+                textarea.val(starterString);
+            }
+        });
+
         this.$textarea.keypress(function(event) {
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13'){
