@@ -80,7 +80,9 @@ $(function() {
                   textarea.selectRange(index + 3);
                   break;
                 case "- ":
-                  alert("dash");
+                  event.preventDefault();
+                  textarea.val(str_start + "\n- " + str_end);
+                  textarea.selectRange(index + 3);
                   break;
               }
 
