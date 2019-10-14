@@ -40,6 +40,9 @@ $(function() {
         };
 
         this.$preview.click(function() {
+            var previewHeight = preview.height();
+            textarea.height(previewHeight);
+            console.log(previewHeight);
             textareaContainer.show();
             preview.hide();
             textarea.focus();
