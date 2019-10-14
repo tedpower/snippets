@@ -47,11 +47,12 @@ $(function() {
             textarea.focus();
         });
 
-        this.$textarea.focus(function() {
+        this.$textarea.focus(function(event) {
             if(textarea.val() == '') {
+                event.preventDefault();
                 var starterString = "This past week\n* \n* \n\nNext week\n* \n* ";
                 textarea.val(starterString);
-                textarea.selectRange(16);
+                textarea.selectRange(17);
             }
         });
 
