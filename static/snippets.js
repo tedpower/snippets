@@ -49,7 +49,7 @@ $(function() {
 
         this.$textarea.focus(function() {
             if(textarea.val() == '') {
-                var starterString = "This past week\n* \n* \n\nNext week\n* \n* ";
+                var starterString = "This past week\n- \n- \n\nNext week\n- \n- ";
                 textarea.val(starterString);
                 textarea.selectRange(17);
             }
