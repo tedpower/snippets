@@ -272,6 +272,7 @@ h1 {
     padding: 16px;
     width: 100%;
     border-radius: 4px;
+    outline: none;
 }
 .snippet-text,
 .snippet-text-markdown {
@@ -355,7 +356,7 @@ h1 {
     cursor: text;
     border-radius: 4px;
 }
-.snippet-preview-container:hover {
+.snippet-preview-container:hover, .snippet-textarea:focus {
     border: 1px solid #999;
 }
 .snippet-tag {

@@ -13,11 +13,13 @@
           <span class="snippets-title">Week of</span>
           {{snippet.week|readable_date}}
           {% if not snippet.text and snippet.week == one_week_ago %}
-          <span class="snippet-alert">Due today!</span>
+          <span class="snippet-alert">DUE TODAY!</span>
           {% endif %}
+          <!--
           {% if not snippet.text and snippet.week <= eight_days_ago %}
           <span class="snippet-alert">OVERDUE!</span>
           {% endif %}
+          -->
         </h2>
       </div>
 
@@ -56,8 +58,11 @@
 
       <div class="snippet-edit-container"
         {% if snippet.text %}style="display: none"{% endif %}>
-        <textarea class="snippet-textarea" name="snippet" rows="6" cols="80">{{snippet.text or ''}}</textarea>
+        <textarea class="snippet-textarea" name="snippet"
+          rows="6" cols="80" data-emojiable="true"
+          placeholder="Last Week / This Week / Shoutouts...">{{snippet.text or ''}}</textarea>
         <div class="clear-fix">
+          <!-- Format with Markdown, list -->
           <div class="snippet-actions">
             <button class="button undo-button">Cancel</button>
             <input type="submit" value="Save" class="button save-button">
@@ -95,6 +100,12 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
 <script src="/static/snippets.js?v8"></script>
+
+<!-- Emoji Picker -->
+<script src="/static/emoji/js/config.js"></script>
+<script src="/static/emoji/js/util.js"></script>
+<script src="/static/emoji/js/jquery.emojiarea.js"></script>
+<script src="/static/emoji/js/emoji-picker.js"></script>
 
 <script>
       // Converts snippets to markdown for other users (that is,
