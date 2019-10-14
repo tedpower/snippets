@@ -59,7 +59,7 @@
       <div class="snippet-edit-container"
         {% if snippet.text %}style="display: none"{% endif %}>
         <textarea class="snippet-textarea" name="snippet"
-          rows="6" cols="80" onkeyup="textAreaAdjust(this)"
+          rows="6" cols="80"
           placeholder="Last Week / This Week / Shoutouts...">{{snippet.text or ''}}</textarea>
         <div class="clear-fix">
           <!-- Format with Markdown, list -->
@@ -108,14 +108,6 @@
   $(".snippet-text-markdown").each(function(i, v) {
     v.innerHTML = window.marked(v.innerHTML);
   });
-</script>
-
-<script>
-  // Size the textarea to the content
-  function textAreaAdjust(o) {
-    o.style.height = "1px";
-    o.style.height = (25+o.scrollHeight)+"px";
-  }
 </script>
 
 {% include "footer.html" %}
