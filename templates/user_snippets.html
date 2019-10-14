@@ -59,7 +59,7 @@
       <div class="snippet-edit-container"
         {% if snippet.text %}style="display: none"{% endif %}>
         <textarea class="snippet-textarea" name="snippet"
-          rows="6" cols="80" data-emojiable="true" data-emoji-input="unicode"
+          rows="6" cols="80" onkeyup="textAreaAdjust(this)"
           placeholder="Last Week / This Week / Shoutouts...">{{snippet.text or ''}}</textarea>
         <div class="clear-fix">
           <!-- Format with Markdown, list -->
@@ -102,12 +102,20 @@
 <script src="/static/snippets.js?v8"></script>
 
 <script>
-      // Converts snippets to markdown for other users (that is,
-      // users who are not you, who you can't edit).
-      marked.setOptions({sanitize: true});
-      $(".snippet-text-markdown").each(function(i, v) {
-         v.innerHTML = window.marked(v.innerHTML);
-      });
+  // Converts snippets to markdown for other users (that is,
+  // users who are not you, who you can't edit).
+  marked.setOptions({sanitize: true});
+  $(".snippet-text-markdown").each(function(i, v) {
+    v.innerHTML = window.marked(v.innerHTML);
+  });
+</script>
+
+<script>
+  // Size the textarea to the content
+  function textAreaAdjust(o) {
+    o.style.height = "1px";
+    o.style.height = (25+o.scrollHeight)+"px";
+  }
 </script>
 
 {% include "footer.html" %}
