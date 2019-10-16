@@ -1,7 +1,8 @@
 Snippets
 ==============
 
-This is a fork of Craig Silverstein's Snippets project.
+This is a fork of Craig Silverstein's Snippets project, with various
+UI tweaks. 
 
 Original Readme
 ==============
