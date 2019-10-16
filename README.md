@@ -1,4 +1,9 @@
-Snippet Server
+Snippets
+==============
+
+This is a fork of Craig Silverstein's Snippets project.
+
+Original Readme
 ==============
 
 This server supports writing and reading weekly snippets -- status
