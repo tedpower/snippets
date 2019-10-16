@@ -5,15 +5,17 @@ This is a fork of Craig Silverstein's
 [Snippets](https://github.com/Khan/snippets) project, with various UI 
 tweaks. 
 
-Original Overview
+More info on Google's Snippets here: 
+http://blog.idonethis.com/google-snippets-internal-tool/
+
+Craig's Original Overview
 -------------------------
 
 This server supports writing and reading weekly snippets -- status
 updates -- for a group of people.
 
 When I joined Khan Academy, my first project was to write a version of
-the weekly-snippet server I had worked with [at
-Google](http://blog.idonethis.com/google-snippets-internal-tool/).
+the weekly-snippet server I had worked with at Google.
 Years later, with the help of many other intrepid Khan Academy
 employees, it's ready for the world!
 
