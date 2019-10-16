@@ -1,8 +1,9 @@
 Snippets
 ==============
 
-This is a fork of [Craig Silverstein's Snippets 
-project](https://github.com/Khan/snippets), with various UI tweaks. 
+This is a fork of Craig Silverstein's 
+[Snippets](https://github.com/Khan/snippets) project, with various UI 
+tweaks. 
 
 Original Overview
 -------------------------
