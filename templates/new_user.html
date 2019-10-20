@@ -1,16 +1,13 @@
 {%- set title='New user' -%}
 {% include "header.html" %}
 
-
-<h1>New User</h1>
-
 <p>Welcome <strong>{{username}}</strong>.</p>
 
-<h2>
-  <a href="/settings?msg=Welcome!+Verify+the+settings+below+and+click+'Save'.&u={{username}}&redirect_to=snippet_entry">Create
-  your account</a> and you can get started writing snippets!</h2>
+<h1>
+  <a href="/settings?msg=Welcome!+Verify+the+settings+below+and+click+'Save'.&u={{username}}&redirect_to=snippet_entry">Get
+  Started</a></h1>
 
 <p><a href="{{login_url}}">Switch User</a> |
-  <a href="{{logout_url}}">log out</a></p>
+  <a href="{{logout_url}}">Log Out</a></p>
 
 {% include "footer.html" %}
