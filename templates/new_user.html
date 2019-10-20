@@ -4,13 +4,13 @@
 
 <h1>New User</h1>
 
-<p>We have no records for <strong>{{username}}</strong>.  If you are a new
-  user, <a href="/settings?msg=Welcome!+Verify+the+settings+below+and+click+'Save'.&u={{username}}&redirect_to=snippet_entry">verify
-  your settings</a> and you can get started writing snippets!</p>
+<p>Welcome <strong>{{username}}</strong>.</p>
 
-<p>Another possibility is you accidentally logged in as the wrong
-  user.  You can <a href="{{login_url}}">switch users</a>,
-  or <a href="{{logout_url}}">log out</a> and log back in
-  as the correct user.</p>
+<h2>
+  <a href="/settings?msg=Welcome!+Verify+the+settings+below+and+click+'Save'.&u={{username}}&redirect_to=snippet_entry">Create
+  your account</a> and you can get started writing snippets!</h2>
+
+<p><a href="{{login_url}}">Switch User</a> |
+  <a href="{{logout_url}}">log out</a></p>
 
 {% include "footer.html" %}
