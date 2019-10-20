@@ -212,6 +212,7 @@ class UserPage(BaseHandler):
             'one_week_ago': _TODAY_FN().date() - datetime.timedelta(days=7),
             'eight_days_ago': _TODAY_FN().date() - datetime.timedelta(days=8),
             'two_weeks_ago': _TODAY_FN().date() - datetime.timedelta(days=14),
+            'day_of_week': _TODAY_FN().date().weekday(),
             'editable': (_logged_in_user_has_permission_for(user_email) and
                          self.request.get('edit', '1') == '1'),
             'user': user,
