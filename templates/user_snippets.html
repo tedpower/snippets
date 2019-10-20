@@ -23,13 +23,14 @@
 
       <input type="hidden" name="week" value="{{snippet.week|iso_date}}">
       <input type="hidden" name="u" value="{{username}}">
+      {% if snippet.week < one_week_ago and day_of_week < 4 %}
       <div class="early-warning" style="display: none;">
         <span>
-          Woah nelly you *can* fill this out now if want to get a head start, but there are still
-          4 days left in the week!
+          You can fill this out now if want to get a head start, but there are still
+          {{7 - day_of_week}} days left in the week!
         </span>
       </div>
-      {{day_of_week}}
+      {% endif %}
 
       <!-- We have no need for private setting or markdown setting -->
 

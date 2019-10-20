@@ -119,8 +119,9 @@ body:not(:-moz-handler-blocked) fieldset {
     background: #fbe2e0;
     border: 1px solid #c52717;
     color: #c52717;
-    margin-bottom: 10px;
+    margin-top: 10px;
     padding: 10px 20px;
+    border-radius: 4px;
 }
 
 /* Generic styles */
