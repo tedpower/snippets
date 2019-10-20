@@ -18,7 +18,8 @@ $(function() {
         this.$secretTag =         $parentForm.find(".snippet-tag-private");
         this.$textarea =          $parentForm.find("textarea");
         this.$undoButton =        $parentForm.find(".undo-button");
-
+        this.$snippetAlert =      $parentForm.find(".snippet-alert");
+        this.$earlyWarning =      $parentForm.find(".early-warning");
         // Creating variables for access within functions
         var preview = this.$preview;
         var textareaContainer = this.$textareaContainer;
@@ -172,6 +173,8 @@ $(function() {
         e && e.preventDefault && e.preventDefault();
 
         this.$textareaContainer.hide();
+        this.$snippetAlert.hide();
+        this.$earlyWarning.hide();
         this.$preview.show();
 
         $.post(this.$el.attr("action"), this.$el.serialize(),
