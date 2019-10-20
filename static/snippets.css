@@ -115,10 +115,8 @@ body:not(:-moz-handler-blocked) fieldset {
     vertical-align: text-bottom;
 }
 .early-warning {
-    /* Red background and darker red border/text */
-    background: #fbe2e0;
-    border: 1px solid #c52717;
-    color: #c52717;
+    background: #edf6ff;
+    border: 1px solid #7ab6ff;
     margin-top: 10px;
     padding: 10px 20px;
     border-radius: 4px;
