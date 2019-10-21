@@ -23,6 +23,7 @@
 
       <input type="hidden" name="week" value="{{snippet.week|iso_date}}">
       <input type="hidden" name="u" value="{{username}}">
+      <div>{{ snippet.text }} , {{ snippet.week }} , {{ one_week_ago }} , {{ day_of_week }}</div>
       {% if not snippet.text and snippet.week < one_week_ago and day_of_week < 4 %}
       <div class="early-warning">
         <span>
