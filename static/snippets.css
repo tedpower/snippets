@@ -3,6 +3,7 @@
 .logo-image {
     margin-right: 16px;
     float: left;
+    height: 32px;
 }
 
 .logo-text {
@@ -51,8 +52,8 @@ body:not(:-moz-handler-blocked) fieldset {
 .header {
     background: #222;
     color: rgba(255, 255, 255, 0.51);
-    padding-bottom: 16px;
-    padding-top: 16px;
+    padding-bottom: 12px;
+    padding-top: 12px;
 }
 
 .header a,
