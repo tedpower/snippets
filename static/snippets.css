@@ -1,7 +1,7 @@
 /* CUSTOM */
 
 .logo-image {
-    margin-right: 16px;
+    margin-right: 14px;
     float: left;
     height: 32px;
 }
@@ -52,8 +52,8 @@ body:not(:-moz-handler-blocked) fieldset {
 .header {
     background: #222;
     color: rgba(255, 255, 255, 0.51);
-    padding-bottom: 12px;
-    padding-top: 12px;
+    padding-bottom: 14px;
+    padding-top: 14px;
 }
 
 .header a,
